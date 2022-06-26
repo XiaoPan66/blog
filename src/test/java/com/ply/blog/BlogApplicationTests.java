@@ -1,8 +1,8 @@
 package com.ply.blog;
 
-import com.ply.blog.entity.TbUser;
-import com.ply.blog.mapper.TbUserMapper;
-import com.ply.blog.service.TbUserService;
+import com.ply.blog.entity.pojo.User;
+import com.ply.blog.mapper.UserMapper;
+import com.ply.blog.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,16 +10,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class BlogApplicationTests {
     @Autowired
-    TbUserService tbUserService;
+    UserService userService;
 
     @Autowired
-    TbUserMapper tbUserMapper;
+    UserMapper userMapper;
 
     @Test
     void contextLoads() {
-        TbUser byId = tbUserService.getById(1);
+        User byId = userService.getById(1);
         System.out.println(byId);
-        TbUser userId = tbUserMapper.findUserId(1);
+        User userId = userMapper.findUserId(1);
         System.out.println(userId);
     }
 }

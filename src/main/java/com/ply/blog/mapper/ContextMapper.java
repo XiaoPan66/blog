@@ -1,6 +1,6 @@
 package com.ply.blog.mapper;
 
-import com.ply.blog.entity.TbUser;
+import com.ply.blog.entity.pojo.Context;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,7 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2022-06-18
  */
 @Mapper
-public interface TbUserMapper extends BaseMapper<TbUser> {
-    TbUser findUserId(Integer id);
+public interface ContextMapper extends BaseMapper<Context> {
 
 }

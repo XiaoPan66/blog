@@ -1,9 +1,11 @@
-package com.ply.blog.entity;
+package com.ply.blog.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -17,35 +19,31 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class TbContext implements Serializable {
+@TableName("tb_comments")
+public class Comments implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
+     * 评论id
+     */
+    @TableId(value = "comment_id", type = IdType.AUTO)
+    private Integer commentId;
+
+    /**
+     * 上层id
+     */
+    private Integer upCommentId;
+
+    /**
      * 文章id
      */
-    @TableId(value = "context_id", type = IdType.AUTO)
     private Integer contextId;
-
-    /**
-     * 文章name
-     */
-    private String contextName;
-
-    /**
-     * 标签id
-     */
-    private Integer tagId;
-
-    /**
-     * 用户id
-     */
-    private Integer userId;
 
     /**
      * 文章内容
      */
-    private String context;
+    private String comments;
 
     /**
      * 创建时间
@@ -53,14 +51,9 @@ public class TbContext implements Serializable {
     private Date createTime;
 
     /**
-     * 更新时间
+     * 状态 审核 通过没有通过
      */
-    private Date updateTime;
-
-    /**
-     * 浏览量
-     */
-    private Integer numberOfViews;
+    private Integer status;
 
     /**
      * 是否被删除 1被删除 0没有删除 默认0

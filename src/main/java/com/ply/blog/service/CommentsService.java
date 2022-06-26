@@ -1,6 +1,6 @@
 package com.ply.blog.service;
 
-import com.ply.blog.entity.TbUser;
+import com.ply.blog.entity.pojo.Comments;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author XiaoPan
  * @since 2022-06-18
  */
-public interface TbUserService extends IService<TbUser> {
+public interface CommentsService extends IService<Comments> {
 
 }

@@ -1,8 +1,8 @@
 package com.ply.blog.service.impl;
 
-import com.ply.blog.entity.TbUser;
-import com.ply.blog.mapper.TbUserMapper;
-import com.ply.blog.service.TbUserService;
+import com.ply.blog.entity.pojo.Comments;
+import com.ply.blog.mapper.CommentsMapper;
+import com.ply.blog.service.CommentsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-06-18
  */
 @Service
-public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> implements TbUserService {
+public class CommentsServiceImpl extends ServiceImpl<CommentsMapper, Comments> implements CommentsService {
 
 }

@@ -1,8 +1,10 @@
-package com.ply.blog.entity;
+package com.ply.blog.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,7 +18,8 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class TbTag implements Serializable {
+@TableName("tb_tag")
+public class Tag implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

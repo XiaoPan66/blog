@@ -1,9 +1,9 @@
 package com.ply.blog.service.impl;
 
-import com.ply.blog.entity.TbTag;
-import com.ply.blog.mapper.TbTagMapper;
-import com.ply.blog.service.TbTagService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ply.blog.entity.pojo.Tag;
+import com.ply.blog.mapper.TagMapper;
+import com.ply.blog.service.TagService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-06-18
  */
 @Service
-public class TbTagServiceImpl extends ServiceImpl<TbTagMapper, TbTag> implements TbTagService {
+public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagService {
 
 }

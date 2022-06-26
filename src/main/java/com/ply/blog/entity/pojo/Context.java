@@ -1,15 +1,20 @@
-package com.ply.blog.entity;
+package com.ply.blog.entity.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+
 import java.util.Date;
+
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author XiaoPan
@@ -17,35 +22,43 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class TbUser implements Serializable {
+@TableName("tb_context")
+public class Context implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
+     * 文章id
+     */
+    @TableId(value = "context_id", type = IdType.AUTO)
+    private Integer contextId;
+
+    /**
+     * 文章name
+     */
+    private String contextName;
+
+
+    /**
+     * 图片
+     */
+    private String image;
+
+
+    /**
+     * 标签id
+     */
+    private Integer tagId;
+
+    /**
      * 用户id
      */
-    @TableId(value = "user_id", type = IdType.AUTO)
     private Integer userId;
 
     /**
-     * 用户name
+     * 文章内容
      */
-    private String userName;
-
-    /**
-     * 用户密码
-     */
-    private String pwd;
-
-    /**
-     * 用户邮箱
-     */
-    private String mailbox;
-
-    /**
-     * 头像 本地地址
-     */
-    private String avatar;
+    private String context;
 
     /**
      * 创建时间
@@ -58,9 +71,9 @@ public class TbUser implements Serializable {
     private Date updateTime;
 
     /**
-     * 个人简介
+     * 浏览量
      */
-    private String userIntroduction;
+    private Integer numberOfViews;
 
     /**
      * 是否被删除 1被删除 0没有删除 默认0
