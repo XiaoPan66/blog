@@ -1,5 +1,8 @@
 package com.ply.blog.entity.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.xml.crypto.Data;
 import java.sql.Timestamp;
@@ -8,6 +11,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_user", schema = "blog")
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbUserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

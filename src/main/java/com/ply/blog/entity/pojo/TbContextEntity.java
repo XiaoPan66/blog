@@ -1,11 +1,18 @@
 package com.ply.blog.entity.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_context", schema = "blog")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbContextEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -34,101 +41,10 @@ public class TbContextEntity {
     private Date updateTime;
     @Basic
     @Column(name = "number_of_views")
-    private int numberOfViews;
+    private Integer numberOfViews;
     @Basic
     @Column(name = "is_del")
-    private int isDel;
+    private Integer isDel;
 
-    public int getContextId() {
-        return contextId;
-    }
 
-    public void setContextId(int contextId) {
-        this.contextId = contextId;
-    }
-
-    public String getContextName() {
-        return contextName;
-    }
-
-    public void setContextName(String contextName) {
-        this.contextName = contextName;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Integer getTagId() {
-        return tagId;
-    }
-
-    public void setTagId(Integer tagId) {
-        this.tagId = tagId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getContext() {
-        return context;
-    }
-
-    public void setContext(String context) {
-        this.context = context;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public int getNumberOfViews() {
-        return numberOfViews;
-    }
-
-    public void setNumberOfViews(int numberOfViews) {
-        this.numberOfViews = numberOfViews;
-    }
-
-    public int getIsDel() {
-        return isDel;
-    }
-
-    public void setIsDel(int isDel) {
-        this.isDel = isDel;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TbContextEntity that = (TbContextEntity) o;
-        return contextId == that.contextId && userId == that.userId && numberOfViews == that.numberOfViews && isDel == that.isDel && Objects.equals(contextName, that.contextName) && Objects.equals(image, that.image) && Objects.equals(tagId, that.tagId) && Objects.equals(context, that.context) && Objects.equals(createTime, that.createTime) && Objects.equals(updateTime, that.updateTime);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(contextId, contextName, image, tagId, userId, context, createTime, updateTime, numberOfViews, isDel);
-    }
 }

@@ -1,10 +1,15 @@
 package com.ply.blog.entity.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_tag", schema = "blog")
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbTagEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

@@ -1,18 +1,18 @@
 package com.ply.blog.mapper;
 
-import com.ply.blog.entity.pojo.Comments;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.ply.blog.entity.pojo.TbCommentsEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- *  Mapper 接口
+ *  服务类
  * </p>
  *
  * @author XiaoPan
  * @since 2022-06-18
  */
-@Mapper
-public interface CommentsMapper extends BaseMapper<Comments> {
+@Repository
+public interface CommentsMapper extends JpaRepository<TbCommentsEntity, Integer> {
 
 }

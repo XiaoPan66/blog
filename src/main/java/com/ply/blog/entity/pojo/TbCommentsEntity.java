@@ -1,11 +1,16 @@
 package com.ply.blog.entity.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_comments", schema = "blog")
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbCommentsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

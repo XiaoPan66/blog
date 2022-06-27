@@ -1,12 +1,14 @@
 package com.ply.blog.service.impl;
 
-import com.ply.blog.dao.TagMapper;
+import com.ply.blog.mapper.TagMapper;
 import com.ply.blog.entity.pojo.TbTagEntity;
 import com.ply.blog.service.TagService;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 
+@Service
 public class TagServiceImpl implements TagService {
     @Resource
     TagMapper tagMapper;

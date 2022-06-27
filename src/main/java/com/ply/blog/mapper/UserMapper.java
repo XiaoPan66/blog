@@ -1,18 +1,21 @@
 package com.ply.blog.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ply.blog.entity.pojo.User;
-import org.apache.ibatis.annotations.Mapper;
+import com.ply.blog.entity.pojo.TbUserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 
 /**
  * <p>
- *  Mapper 接口
+ * 服务类
  * </p>
  *
  * @author XiaoPan
  * @since 2022-06-18
  */
-@Mapper
-public interface UserMapper extends BaseMapper<User> {
-    User findUserId(Integer id);
+@Repository
+public interface UserMapper extends JpaRepository<TbUserEntity, Integer> {
+//    通过 name 获取 user
+    TbUserEntity getByUserName(String name);
+
 }
