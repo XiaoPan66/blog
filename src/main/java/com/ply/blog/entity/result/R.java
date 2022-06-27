@@ -18,7 +18,6 @@ public class R<T> {
 
     //    返回message
     private String message;
-
     //    返回数据
     private T data;
 
@@ -47,10 +46,15 @@ public class R<T> {
     }
 
     public static R<?> ok() {
-        return new R<>().sSuccess(true).sCode(ResultCode.CODE_OPERATE_OK.code);
+        return new R<>().sSuccess(true).sCode(ResultCode.OK.getCode());
     }
 
     public static R<?> error() {
-        return new R<>().sSuccess(false).sCode(ResultCode.CODE_OPERATE_ERROR.code);
+        return new R<>().sSuccess(false).sCode(ResultCode.CODE_OPERATE_ERROR.getCode());
     }
+
+    public static R<?> error(Integer resultCode) {
+        return new R<>().sSuccess(false).sCode(resultCode);
+    }
+
 }

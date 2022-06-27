@@ -1,7 +1,7 @@
-package com.ply.blog.service;
+package com.ply.blog.dao;
 
-import com.ply.blog.entity.pojo.Context;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.ply.blog.entity.pojo.TbContextEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author XiaoPan
  * @since 2022-06-18
  */
-public interface ContextService extends IService<Context> {
+public interface ContextMapper extends JpaRepository<TbContextEntity, Integer> {
     /**
      * 发表文章  在前面判断 tagID 是否 合法
      */
@@ -33,7 +33,7 @@ public interface ContextService extends IService<Context> {
     /**
      * 查询 文章 分页 条件查询 时间倒数  只通过 分类id 进行查询
      */
-    List<Context> queryContext();
+    List<TbContextEntity> queryContext();
 
 
 }

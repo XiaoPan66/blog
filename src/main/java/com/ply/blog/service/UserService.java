@@ -1,16 +1,22 @@
 package com.ply.blog.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.ply.blog.entity.pojo.User;
+import com.ply.blog.entity.pojo.TbUserEntity;
 
-/**
- * <p>
- *  服务类
- * </p>
- *
- * @author XiaoPan
- * @since 2022-06-18
- */
-public interface UserService extends IService<User> {
+public interface UserService {
+    /**
+     * 用户登录
+     */
+    void login(String name, String pwd);
+
+
+    /**
+     * 用户 注销
+     */
+    void loginOut();
+
+    /**
+     * 获取用户信息
+     */
+    TbUserEntity getUserInfo();
 
 }

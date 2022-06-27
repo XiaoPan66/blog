@@ -1,20 +1,27 @@
 package com.ply.blog.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ply.blog.entity.pojo.Tag;
-import com.ply.blog.mapper.TagMapper;
+import com.ply.blog.dao.TagMapper;
+import com.ply.blog.entity.pojo.TbTagEntity;
 import com.ply.blog.service.TagService;
-import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author XiaoPan
- * @since 2022-06-18
- */
-@Service
-public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagService {
+import javax.annotation.Resource;
 
+public class TagServiceImpl implements TagService {
+    @Resource
+    TagMapper tagMapper;
+
+    //    增删改查
+    //    增加tag
+    public TbTagEntity addTag(String tagName) {
+
+        if (!StringUtils.hasText(tagName)) {
+            throw new RuntimeException();
+        }
+        TbTagEntity tbTagEntity = new TbTagEntity();
+        tbTagEntity.setTagName("java");
+        TbTagEntity save = tagMapper.save(tbTagEntity);
+        return save;
+    }
 }
+
