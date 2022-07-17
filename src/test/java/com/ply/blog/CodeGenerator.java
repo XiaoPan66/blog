@@ -1,4 +1,4 @@
-//package com.ply.blog;
+package com.ply.blog;//package com.ply.blog;
 //
 //import com.baomidou.mybatisplus.annotation.DbType;
 //import com.baomidou.mybatisplus.annotation.IdType;

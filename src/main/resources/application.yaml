@@ -1,12 +1,12 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://120.76.119.66:3306/blog?allowMultiQueries=true
-    username: ply
-    password: q123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?allowMultiQueries=true
+    username: root
+    password: root
 
   profiles:
-    active: proc
+    active: dev
 
   jackson:
     time-zone: GMT+8
@@ -17,4 +17,6 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: false
-
+logging:
+  level:
+    com.ply.blog: debug
